@@ -1,5 +1,6 @@
 import csv
-from utils.generators.timeline import TimelineGenerator as tg
+from utils.generators.timeline import TimelineGenerator as tlg
+from utils.generators.activity import ActivityGenerator as ag
 
 
 FILE_LOCATION = './data/time-series.csv'
@@ -11,8 +12,8 @@ def get_random_increase(current_value: float) -> float:
 
 def generate_data():
     data = []
-    for row in tg.generate_timeline():
-        # Add new data -> row.append('new value')
+    for row in tlg.generate_timeline():
+        row += ag.generate_random_activity()
         data.append(row)
     return data 
 

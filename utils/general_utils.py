@@ -1,10 +1,3 @@
-Đactors = (
-    'Paula', 'Robert', 'Allen', 'Deloris', 'Brody'
-)
-
-Đactivies = (
-    'floor covering', 'rendering', 'painting'
-)
 
 
 def int_to_string(num: int) -> str:

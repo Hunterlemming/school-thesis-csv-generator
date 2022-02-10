@@ -56,15 +56,3 @@ class TimelineGenerator:
                                     if target == 'hour':
                                         timeline.append([TimelineGenerator.generate_datetime_string(year, month, day, hour)])
         return timeline
-
-
-
-        '''
-        for month in range(1, 13):
-            for day in range(1, 32):
-                row = []
-                date = TimelineGenerator.generate_datetime_string(month, day)
-                if date is not None:
-                    row.append(date)
-                    data.append(row)
-        '''
