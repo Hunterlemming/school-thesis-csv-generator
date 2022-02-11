@@ -1,6 +1,6 @@
 from random import randint, uniform
-from utils.general_utils import int_to_string as its, CustomError
-from typing import Optional, Tuple, List
+from typing import Optional, List
+from utils.activity_log import Actor
 
 
 ACTIVITIES = ('floor covering', 'rendering', 'painting')
@@ -24,7 +24,7 @@ class ActivityGenerator:
     @staticmethod
     def generate_random_activity():
 
-        actor = ACTORS[randint(0, len(ACTORS) - 1)]
+        actor = Actor(ACTORS[randint(0, len(ACTORS) - 1)])
         activity = ACTIVITIES[randint(0, len(ACTIVITIES) - 1)]
-        profit = round(uniform(0, 10), 2)
-        return ActivityGenerator.generate_activity(actor=actor, activity=activity, profit=profit)
+        return ActivityGenerator.generate_activity(actor=actor.name, activity=activity)
+
